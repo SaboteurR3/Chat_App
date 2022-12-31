@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userList: ArrayList<User>
     private lateinit var adapter: UserAdapter
@@ -24,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         mAuth = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.adapter = adapter
 
-        mDbRef.child("users").addValueEventListener(object: ValueEventListener {
+        mDbRef.child("users").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
-                for(postSnapshot in snapshot.children) {
+                for (postSnapshot in snapshot.children) {
                     val currentUser = postSnapshot.getValue(User::class.java)
-                    if(mAuth.currentUser?.uid != currentUser?.uid) {
+                    if (mAuth.currentUser?.uid != currentUser?.uid) {
                         userList.add(currentUser!!)
                     }
                 }
@@ -61,22 +61,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.logout) {
+        if (item.itemId == R.id.logout) {
             // Sign out
-                FirebaseAuth.getInstance().signOut()
-                val intent = Intent(this, Login::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                val loading = LoadingDialog(this)
-                loading.startLoading()
-                val handler = Handler()
-                handler.postDelayed(object : Runnable {
-                    override fun run() {
-                        loading.isDismiss()
-                        startActivity(intent)
-                    }
-                }, 2000)
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            val loading = LoadingDialog(this)
+            loading.startLoading()
+            val handler = Handler()
+            handler.postDelayed(object : Runnable {
+                override fun run() {
+                    loading.isDismiss()
+                    startActivity(intent)
+                }
+            }, 2000)
             return true
-            }
+        } else if (item.itemId == R.id.profile) {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+            return true
+        }
         return true
     }
 }

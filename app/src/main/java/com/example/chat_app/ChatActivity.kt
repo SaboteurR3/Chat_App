@@ -69,15 +69,16 @@ class ChatActivity : AppCompatActivity() {
         sendButton.setOnClickListener {
             val message = messageBox.text.toString()
             val messageObject = Message(message, senderUid)
-
-            mDbRef.child("chats").child(senderRoom!!).child("messages").push().
-            setValue(messageObject)
-                .addOnSuccessListener {
-                    mDbRef.child("chats").child(receiverRoom!!).child("messages").push().
-                    setValue(messageObject)
-                }
-            // clear input after sending a text
-            messageBox.setText("")
+            if(!(message.isEmpty() || message.isBlank())) {
+                mDbRef.child("chats").child(senderRoom!!).child("messages").push().
+                setValue(messageObject)
+                    .addOnSuccessListener {
+                        mDbRef.child("chats").child(receiverRoom!!).child("messages").push().
+                        setValue(messageObject)
+                    }
+                // clear input after sending a text
+                messageBox.setText("")
+            }
         }
     }
 }

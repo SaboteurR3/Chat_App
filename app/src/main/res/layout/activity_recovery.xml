@@ -60,7 +60,7 @@
         android:singleLine="true"
         android:scrollHorizontally="true"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/background"
+        android:background="@drawable/messagebackground2"
         android:drawableLeft="@drawable/email_icon"
         android:drawablePadding="10dp"
         android:fontFamily="@font/sourceserifpro_regular"
