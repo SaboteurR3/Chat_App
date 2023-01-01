@@ -1,28 +1,17 @@
 package com.example.chat_app
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.ImageDecoder
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
-import androidx.core.net.toUri
-import com.bumptech.glide.Glide
 import com.example.chat_app.UIElement.LoadingDialog
 import com.example.chat_app.model.User
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.squareup.picasso.Picasso
-import java.lang.System.load
 
 class Profile : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -48,8 +37,8 @@ class Profile : AppCompatActivity() {
                     if (mAuth.currentUser?.uid == currentUser?.uid) {
                         val saveUserUid = currentUser?.uid
                         val saveUserName = currentUser?.username
-                        findViewById<TextView>(R.id.profile_uid).text = saveUserUid
-                        findViewById<TextView>(R.id.profile_username).text = saveUserName
+                        findViewById<TextView>(R.id.profile_uid).text = "UID: " + saveUserUid
+                        findViewById<TextView>(R.id.profile_username).text = "Username: " + saveUserName
                     }
                 }
             }
