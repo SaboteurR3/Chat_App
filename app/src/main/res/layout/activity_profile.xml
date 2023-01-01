@@ -39,15 +39,6 @@
         android:paddingTop="10dp"
         android:layout_marginTop="20dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_picture"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginBottom="296dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/profile_username"
@@ -59,30 +50,130 @@
             android:textAlignment="center"
             android:textColor="@color/LoginRegister_1"
             android:textSize="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/profile_uid"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_picture"
-            app:layout_constraintVertical_bias="0.381" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.614" />
 
         <TextView
             android:id="@+id/profile_uid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="104dp"
             android:fontFamily="@font/sourceserifpro_regular"
             android:paddingTop="10dp"
             android:text="UID"
             android:textAlignment="center"
             android:textColor="@color/LoginRegister_1"
             android:textSize="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_username"
-            app:layout_constraintVertical_bias="0.214" />
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:fontFamily="@font/sourceserifpro_regular"
+            android:paddingTop="10dp"
+            android:text="Change Password"
+            android:textAlignment="center"
+            android:textColor="#462B4E"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_uid" />
 
+        <EditText
+            android:id="@+id/changepassword_current"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/messagebackground2"
+            android:drawableLeft="@drawable/pass_icon"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/sourceserifpro_regular"
+            android:hint="Current password"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/Text_Color"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/changepassword_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/messagebackground2"
+            android:drawableLeft="@drawable/pass_icon"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/sourceserifpro_regular"
+            android:hint="New Password"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/Text_Color"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changepassword_current" />
+
+        <EditText
+            android:id="@+id/changepassword_new2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/messagebackground2"
+            android:drawableLeft="@drawable/pass_icon"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/sourceserifpro_regular"
+            android:hint="Repeat password"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/Text_Color"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changepassword_new" />
+
+        <Button
+            android:id="@+id/btn_change_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="120dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/messagebackground2"
+            android:text="Reset"
+            android:textColor="@color/Text_Color"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changepassword_new2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

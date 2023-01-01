@@ -47,12 +47,12 @@
         android:text="Please sign in to continue."
         android:textColor="@color/Text_Color"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/edit_email"
+        app:layout_constraintBottom_toTopOf="@+id/changepassword_current"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/changepassword_current"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -95,11 +95,11 @@
         android:textColorHint="@color/Text_Color"
         android:textColor="@color/white"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toTopOf="@+id/btn_change_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_change_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="120dp"

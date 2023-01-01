@@ -30,7 +30,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, Recovery::class.java)
             startActivity(intent)
         }
-        val login = findViewById<Button>(R.id.btnLogin)
+        val login = findViewById<Button>(R.id.btn_change_pass)
         login.setOnClickListener {
             login()
         }
@@ -46,7 +46,7 @@ class Login : AppCompatActivity() {
         }
     }
     private fun login() {
-        val email = findViewById<TextView>(R.id.edit_email).text.toString()
+        val email = findViewById<TextView>(R.id.changepassword_current).text.toString()
         val password = findViewById<TextView>(R.id.edit_password).text.toString()
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please fill out email/password.", Toast.LENGTH_SHORT).show()
