@@ -39,8 +39,8 @@
         android:paddingTop="10dp"
         android:layout_marginTop="20dp">
 
-        <ImageView
-            android:id="@+id/imageView4"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_picture"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_marginBottom="296dp"
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/profile_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sourceserifpro_regular"
@@ -63,8 +63,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/profile_picture"
             app:layout_constraintVertical_bias="0.381" />
+
+        <TextView
+            android:id="@+id/profile_uid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/sourceserifpro_regular"
+            android:paddingTop="10dp"
+            android:text="UID"
+            android:textAlignment="center"
+            android:textColor="@color/LoginRegister_1"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_username"
+            app:layout_constraintVertical_bias="0.214" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

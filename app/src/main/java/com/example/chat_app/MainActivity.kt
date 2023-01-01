@@ -46,13 +46,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 adapter.notifyDataSetChanged()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

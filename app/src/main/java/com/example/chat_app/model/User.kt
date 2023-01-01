@@ -1,6 +1,6 @@
 package com.example.chat_app.model
 
-class User {
+public class User {
     var uid: String? = null
     var username: String? = null
     var profileImageUrl: String? = null
